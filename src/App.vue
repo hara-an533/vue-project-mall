@@ -19,5 +19,7 @@ export default {
 <style>
 @import "~assets/css/base.css";
 @import "~assets/css/normalize.css";
-
+#app {
+  background-color: #fff;
+}
 </style>
