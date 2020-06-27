@@ -69,8 +69,11 @@ export default {
     this.getHomeGoods("pop");
     this.getHomeGoods("new");
     this.getHomeGoods("sell");
+  },
+  mounted() {
+    const refresh = this.debounce(this.$refs.scroll.refresh(), 500);
     this.$bus.$on("imgLoad", () => {
-      this.$refs.scroll.refresh();
+      refresh();
     });
   },
   methods: {
@@ -112,6 +115,17 @@ export default {
     },
     loadMore() {
       this.getHomeGoods(this.currentType);
+    },
+    debounce(func, delay) {
+      let timer = null;
+      return function() {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          console.log(this);
+          
+          func.apply(this, args);
+        }, delay);
+      };
     }
   }
 };

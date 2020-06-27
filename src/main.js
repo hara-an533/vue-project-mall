@@ -11,6 +11,8 @@ Vue.use(MintUI)
 //导入MUI的样式表
 import './lib/mui/css/mui.min.css'
 
+Vue.prototype.$bus = new Vue()
+
 Vue.config.productionTip = false
 
 new Vue({
