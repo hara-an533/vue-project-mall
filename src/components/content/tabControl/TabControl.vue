@@ -35,8 +35,6 @@ export default {
   justify-content: space-around;
   font-size: 15px;
   line-height: 40px;
-  position: sticky;
-  top: 44px;
   background-color: #fff;
 }
 .tab-control-item {
